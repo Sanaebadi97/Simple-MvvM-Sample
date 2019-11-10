@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="user"
-            type="sanaebadi.info.singleton.model.User" />
+            name="userModel"
+            type="sanaebadi.info.singleton.viewModel.MainViewModel" />
 
     </data>
 
@@ -23,9 +22,9 @@
             android:layout_height="120dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:imageUrl="@{userModel.image}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageUrl="@{user.image}"
             tools:src="@mipmap/ic_launcher" />
 
 
@@ -35,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:padding="5dp"
-            android:text="@{user.username}"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:text="@{userModel.userName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_user"
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:padding="5dp"
-            android:text="@{user.email}"
+            android:text="@{userModel.email}"
             android:textColor="@android:color/black"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"

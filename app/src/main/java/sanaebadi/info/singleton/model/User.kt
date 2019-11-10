@@ -1,19 +1,15 @@
 package sanaebadi.info.singleton.model
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class User(
-    @Expose
-    @SerializedName("email")
+    @Json(name = "email")
     val email: String,
 
-    @Expose
-    @SerializedName("username")
-    val username: String,
+    @Json(name = "username")
+    var username: String,
 
-    @Expose
-    @SerializedName("image")
+    @Json(name = "image")
     val image: String
 
 
